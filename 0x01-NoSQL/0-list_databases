@@ -1,0 +1,2 @@
+// Lists all databases in MONGODB
+show dbs
