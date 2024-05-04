@@ -18,8 +18,8 @@ def count_requests(method: Callable) -> Callable:
     def wrapper(url):
         '''Wrapper for decorator
         '''
-        red.incr(f"count:{url}") # extract reddis key count
-        cached_content = red.get(f"cached:{url}") #extract redis key cached
+        red.incr(f"count:{url}")  # extract reddis key count
+        cached_content = red.get(f"cached:{url}")  # extract redis key cached
         if cached_content:
             return cached_content.decode('utf-8')
         func = method(url)
